@@ -1,0 +1,44 @@
+MIT License
+
+Copyright (c) 2026 Frank Bieder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+THIRD-PARTY LICENSES
+
+This project uses the following third-party resources:
+
+1. Tailwind CSS
+   - License: MIT License
+   - Copyright (c) Tailwind Labs, Inc.
+   - https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE
+
+2. Google Fonts - Inter
+   - License: SIL Open Font License 1.1
+   - Copyright 2020 The Inter Project Authors
+   - https://github.com/rsms/inter/blob/master/LICENSE.txt
+
+3. Heroicons (for SVG icons used inline)
+   - License: MIT License
+   - Copyright (c) 2020 Refactoring UI Inc.
+   - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE
+
+All third-party licenses are respected and compliance is maintained.

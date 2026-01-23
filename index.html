@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frank Bieder — PhD Candidate in Autonomous Systems</title>
+  <meta name="description" content="PhD Candidate researching map learning, cross-sensor domain adaptation, and scalable training data generation for autonomous driving at KIT and FZI." />
+  <meta name="keywords" content="Frank Bieder, Autonomous Driving, Machine Learning, Computer Vision, Robotics, KIT, FZI, Domain Adaptation, Semantic Segmentation, HD Maps" />
+  <meta name="author" content="Frank Bieder" />
+
+  <!-- Tailwind CSS CDN - MIT License (https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts - Open Font License (https://fonts.google.com/about) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom styles - all original code */
+    .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .animate-fade-in { animation: fadeIn 0.6s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-100">
+  <!-- Background gradient -->
+  <div class="pointer-events-none fixed inset-0 opacity-50">
+    <div class="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-500/30 via-purple-500/20 to-cyan-500/20 blur-3xl"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 glass">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+      <a href="#home" class="font-semibold tracking-tight hover:text-white">Frank Bieder</a>
+      <nav class="hidden gap-6 text-sm text-zinc-300 md:flex">
+        <a class="hover:text-white transition-colors" href="#about">About</a>
+        <a class="hover:text-white transition-colors" href="#research">Research</a>
+        <a class="hover:text-white transition-colors" href="#publications">Publications</a>
+        <a class="hover:text-white transition-colors" href="#experience">Experience</a>
+        <a class="hover:text-white transition-colors" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="./assets/CV.pdf" class="rounded-xl bg-white/10 px-3 py-2 text-sm hover:bg-white/15 transition-colors">CV</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="relative mx-auto max-w-6xl px-5">
+    <!-- Hero Section -->
+    <section class="pt-16 pb-12 md:pt-24">
+      <div class="grid gap-10 md:grid-cols-[1.3fr_0.7fr] md:items-center">
+        <div class="animate-fade-in">
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-200">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            PhD Candidate · Defending March 10, 2026
+          </div>
+
+          <h1 class="mt-5 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+            Frank Joachim Bieder
+          </h1>
+
+          <p class="mt-4 text-xl md:text-2xl text-zinc-300 font-light">
+            Embodied AI · Computer Vision · Machine Learning
+          </p>
+
+          <p class="mt-6 max-w-2xl text-base text-zinc-300 leading-relaxed">
+            My research bridges <strong>maps, perception, and learning</strong> to enable robust real-world AI systems
+            under limited annotation and significant sensor domain shifts. I specialize in <strong>cross-sensor domain adaptation</strong>
+            and <strong>scalable training data generation</strong> for embodied AI in autonomous driving.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#publications" class="rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 hover:bg-zinc-100 transition-all shadow-lg hover:shadow-xl">
+              View Publications
+            </a>
+            <a href="./assets/CV.pdf" class="rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm hover:bg-white/10 transition-colors">
+              Download CV
+            </a>
+            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm hover:bg-white/10 transition-colors">
+              Google Scholar
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-zinc-400">
+            <span class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Karlsruhe, Germany
+            </span>
+            <span class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              KIT & FZI Research Center
+            </span>
+            <span class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <a class="hover:text-white transition-colors" href="mailto:frank.bieder@kit.edu">frank.bieder@kit.edu</a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Profile Card -->
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 shadow-2xl backdrop-blur-sm">
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="./assets/profile.jpg"
+              alt="Frank Bieder"
+              class="h-32 w-32 rounded-2xl object-cover border-2 border-white/20 shadow-lg"
+              onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';"
+            />
+            <div id="photoFallback" class="hidden h-32 w-32 items-center justify-center rounded-2xl bg-white/10 border-2 border-white/20 text-2xl font-bold text-zinc-300">
+              FB
+            </div>
+
+            <div class="mt-4">
+              <div class="text-xl font-bold">Frank Joachim Bieder</div>
+              <div class="mt-1 text-sm text-zinc-400">Research Scientist & Group Leader</div>
+              <div class="mt-1 text-xs text-zinc-400">KIT · FZI Research Center</div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap justify-center gap-2">
+              <a class="rounded-lg bg-white/10 px-3 py-1.5 text-xs hover:bg-white/15 transition-colors" href="https://github.com/FranklynJey" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="rounded-lg bg-white/10 px-3 py-1.5 text-xs hover:bg-white/15 transition-colors" href="https://www.linkedin.com/in/frank-bieder" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="rounded-lg bg-white/10 px-3 py-1.5 text-xs hover:bg-white/15 transition-colors" href="https://orcid.org/YOUR_ORCID" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a class="rounded-lg bg-white/10 px-3 py-1.5 text-xs hover:bg-white/15 transition-colors" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">Scholar</a>
+            </div>
+          </div>
+
+          <div class="mt-6 space-y-3">
+            <div class="rounded-2xl border border-white/10 bg-zinc-950/40 p-4">
+              <div class="text-xs font-medium text-zinc-400 uppercase tracking-wide">Research Focus</div>
+              <div class="mt-2 text-sm text-zinc-200">Scalable Data Generation · End-to-End Autonomy · Learning from Maps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Research Overview -->
+    <section id="about" class="mt-20">
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 p-8">
+        <h2 class="text-3xl font-bold tracking-tight">About</h2>
+        <div class="mt-6 grid gap-8 md:grid-cols-2">
+          <div>
+            <p class="text-zinc-300 leading-relaxed">
+              I am a PhD candidate at the <strong>Karlsruhe Institute of Technology (KIT)</strong> and
+              <strong>FZI Research Center for Information Technology</strong>, supervised by
+              <strong>Prof. Christoph Stiller</strong>. My thesis focuses on <em>"Learning from Maps:
+              Scalable Ground Truth Generation in Autonomous Driving"</em> and I will defend on
+              <strong>March 10, 2026</strong>.
+            </p>
+            <p class="mt-4 text-zinc-300 leading-relaxed">
+              My research enables robust real-world AI models under limited annotation and significant
+              sensor domain shifts by bridging <strong>maps</strong>, <strong>perception</strong>, and
+              <strong>learning</strong>. I am particularly interested in leveraging HD maps and multi-drive
+              mapping to overcome data scarcity in autonomous driving.
+            </p>
+          </div>
+          <div>
+            <p class="text-zinc-300 leading-relaxed">
+              During my studies, I have completed extensive coursework in optimization, system theory,
+              and machine learning, and gained research, industry, and teaching experience in autonomous
+              driving and robotics. I have developed strong proficiency in <strong>Python</strong>,
+              <strong>C++</strong>, <strong>ROS</strong>, and modern deep learning frameworks
+              (PyTorch, TensorFlow).
+            </p>
+            <p class="mt-4 text-zinc-300 leading-relaxed">
+              I actively collaborate with leading research institutions and industry partners worldwide,
+              bridging fundamental research with real-world industrial autonomous driving applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research" class="mt-16">
+      <h2 class="text-3xl font-bold tracking-tight">Research Interests</h2>
+      <p class="mt-3 max-w-3xl text-zinc-300">
+        My research focuses on enabling robust and scalable embodied AI systems for real-world applications,
+        with emphasis on autonomous driving and mobile robotics.
+      </p>
+
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        <div class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all hover:border-white/20">
+          <div class="text-4xl mb-3">🗺️</div>
+          <div class="text-lg font-semibold">Learning from Maps</div>
+          <p class="mt-3 text-sm text-zinc-300 leading-relaxed">
+            Scalable ground truth generation for autonomous driving by leveraging high-definition maps
+            and multi-drive data to overcome annotation bottlenecks and enable data-efficient learning.
+          </p>
+        </div>
+
+        <div class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all hover:border-white/20">
+          <div class="text-4xl mb-3">🔄</div>
+          <div class="text-lg font-semibold">Cross-Sensor Domain Adaptation</div>
+          <p class="mt-3 text-sm text-zinc-300 leading-relaxed">
+            Developing robust domain adaptation techniques for embodied AI systems to generalize across
+            different sensor modalities, environmental conditions, and deployment scenarios.
+          </p>
+        </div>
+
+        <div class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all hover:border-white/20">
+          <div class="text-4xl mb-3">🚗</div>
+          <div class="text-lg font-semibold">End-to-End Autonomy</div>
+          <p class="mt-3 text-sm text-zinc-300 leading-relaxed">
+            Scaling real-world deployment of end-to-end autonomous driving stacks in complex urban
+            environments, from perception through planning to control.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="mt-16">
+      <div class="flex items-end justify-between gap-4 flex-wrap">
+        <h2 class="text-3xl font-bold tracking-tight">Selected Publications</h2>
+        <a class="text-sm text-zinc-300 underline decoration-white/20 hover:decoration-white transition-colors" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">
+          Full list on Google Scholar →
+        </a>
+      </div>
+
+      <div class="mt-8 space-y-4">
+        <!-- Publication 1 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">XDMAP: Cross-Modal Domain Adaptation using Semantic Parametric Mapping</h3>
+            <span class="text-xs text-zinc-400 whitespace-nowrap">arXiv 2026</span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Frank Bieder, Hendrik Königshof, Haohao Hu, Fabian Immel, Yinzhe Shen, Jan-Hendrik Pauls, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Cross-modal domain adaptation for robust perception across different sensor modalities.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-300 px-3 py-1 text-xs">Domain Adaptation</span>
+            <span class="rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 px-3 py-1 text-xs">Cross-Sensor</span>
+          </div>
+        </article>
+
+        <!-- Publication 2 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction</h3>
+            <span class="text-xs text-zinc-400 whitespace-nowrap">NeurIPS 2025</span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Fabian Immel, Jan-Hendrik Pauls, Richard Fehler, Frank Bieder, Jonas Merkert, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Online HD map construction using text-annotated navigation maps.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 px-3 py-1 text-xs">HD Maps</span>
+            <span class="rounded-lg bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 px-3 py-1 text-xs">Deep Learning</span>
+          </div>
+        </article>
+
+        <!-- Publication 3 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">M3TR: A Generalist Model for Real-World HD Map Completion</h3>
+            <span class="text-xs text-zinc-400 whitespace-nowrap">RA-L 2025</span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Fabian Immel, Richard Fehler, Frank Bieder, Jan-Hendrik Pauls, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Generalist transformer model for real-world high-definition map completion.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 px-3 py-1 text-xs">HD Maps</span>
+            <span class="rounded-lg bg-orange-500/20 border border-orange-500/30 text-orange-300 px-3 py-1 text-xs">Transformers</span>
+          </div>
+        </article>
+
+        <!-- Publication 4 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">Map Learning: Ein Ansatz zur automatisierten Erstellung von Trainingsdaten unter Verwendung von HD-Karten und Mehrfachbefahrungen</h3>
+            <span class="inline-flex items-center gap-1 text-xs text-yellow-400 whitespace-nowrap">
+              🏆 Best Paper Award · FAS 2023
+            </span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Frank Bieder, Haohao Hu, Johannes Schantz, Oguzahn Kirik, Florian Ries, Martin Haueis, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Automated training data generation using HD maps and multi-drive mapping.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 px-3 py-1 text-xs">HD Maps</span>
+            <span class="rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 px-3 py-1 text-xs">Training Data</span>
+          </div>
+        </article>
+
+        <!-- Publication 5 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">TEScalib: Targetless Extrinsic Self-Calibration of LiDAR and Stereo Camera for Automated Driving Vehicles with Uncertainty Analysis</h3>
+            <span class="text-xs text-zinc-400 whitespace-nowrap">IROS 2022</span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Haohao Hu, F. Han, Frank Bieder, Jan-Hendrik Pauls, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Targetless extrinsic calibration of multi-modal sensors with uncertainty quantification.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 px-3 py-1 text-xs">Calibration</span>
+            <span class="rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-300 px-3 py-1 text-xs">Sensor Fusion</span>
+          </div>
+        </article>
+
+        <!-- Publication 5b -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">Interaction-Aware Game-Theoretic Motion Planning for Automated Vehicles using Bi-level Optimization</h3>
+            <span class="inline-flex items-center gap-1 text-xs text-yellow-400 whitespace-nowrap">
+              🏆 2nd Best Paper Award · ITSC 2022
+            </span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Christoph Burger, Johannes Fischer, Frank Bieder, Ömer Tas, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Game-theoretic approach to motion planning considering interaction between automated vehicles.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-orange-500/20 border border-orange-500/30 text-orange-300 px-3 py-1 text-xs">Motion Planning</span>
+            <span class="rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 px-3 py-1 text-xs">Game Theory</span>
+          </div>
+        </article>
+
+        <!-- Publication 6 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">MASS: Multi-Attentional Semantic Segmentation of LiDAR Data for Dense Top-View Understanding</h3>
+            <span class="text-xs text-zinc-400 whitespace-nowrap">T-ITS 2022</span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Kunyu Peng, Juncong Fei, Kailun Yang, Alina Roitberg, Jiaming Zhang, Frank Bieder, Philipp Heidenreich, Christoph Stiller, Rainer Stiefelhagen</p>
+          <p class="mt-3 text-sm text-zinc-300">Multi-attentional approach for dense semantic understanding from LiDAR data.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 px-3 py-1 text-xs">Semantic Segmentation</span>
+            <span class="rounded-lg bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 px-3 py-1 text-xs">LiDAR</span>
+          </div>
+        </article>
+
+        <!-- Publication 7 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">Improving Lidar-Based Semantic Segmentation of Top-View Grid Maps by Learning Features in Complementary Representations</h3>
+            <span class="text-xs text-zinc-400 whitespace-nowrap">FUSION 2021</span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Frank Bieder, Maximilian Link, Simon Romanski, Haohao Hu, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Novel approach to semantic segmentation using complementary feature representations.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 px-3 py-1 text-xs">Grid Maps</span>
+            <span class="rounded-lg bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 px-3 py-1 text-xs">LiDAR</span>
+          </div>
+        </article>
+
+        <!-- Publication 8 -->
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold flex-1">Exploiting Multi-Layer Grid Maps for Surround-View Semantic Segmentation of Sparse LiDAR Data</h3>
+            <span class="text-xs text-zinc-400 whitespace-nowrap">IV 2020</span>
+          </div>
+          <p class="mt-1 text-sm text-zinc-400">Frank Bieder, Sascha Wirges, Johannes Janosovits, Sven Richter, Zheyuan Wang, Christoph Stiller</p>
+          <p class="mt-3 text-sm text-zinc-300">Multi-layer grid map representation for robust semantic segmentation from sparse sensor data.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 px-3 py-1 text-xs">Grid Maps</span>
+            <span class="rounded-lg bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 px-3 py-1 text-xs">LiDAR</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="mt-16">
+      <h2 class="text-3xl font-bold tracking-tight">Experience</h2>
+
+      <div class="mt-8 space-y-6">
+        <!-- Current Position - Group Leader -->
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">Research Scientist & Group Leader</h3>
+              <p class="mt-1 text-zinc-300">FZI Research Center for Information Technology</p>
+              <p class="mt-1 text-sm text-zinc-400">Visual and Spatial Learning for Autonomous Driving · Supervised by Prof. Christoph Stiller</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Nov 2025 – Present</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Research group leader for visual and spatial learning</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Supervising PhD students and coordinating research activities</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Research focus: End-to-end learning and perception systems for autonomous driving</span></li>
+          </ul>
+        </div>
+
+        <!-- Previous Position - PhD Candidate -->
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">Research Scientist & PhD Candidate</h3>
+              <p class="mt-1 text-zinc-300">FZI Research Center for Information Technology</p>
+              <p class="mt-1 text-sm text-zinc-400">Visual and Spatial Learning for Autonomous Driving · Supervised by Prof. Christoph Stiller</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">May 2019 – Oct 2025</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Mobile Perception Systems Department</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>2023–2025: Focus on dissertation – Learning from Maps</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>2021–2022: Project lead of industrial research project – Map-less driving</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>2019–2021: Project lead of industrial research project – Flexible Localization</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Co-maintenance of software and hardware stacks for autonomous driving research vehicles</span></li>
+          </ul>
+        </div>
+
+        <!-- UC Berkeley -->
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">Visiting PhD Candidate</h3>
+              <p class="mt-1 text-zinc-300">UC Berkeley – Mechanical Systems Control Lab</p>
+              <p class="mt-1 text-sm text-zinc-400">Supervised by Prof. Masayoshi Tomizuka</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Aug 2022 – Oct 2022</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Research on map-less driving and map perception for embodied AI</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Funded by KHYS Exchange Grant</span></li>
+          </ul>
+        </div>
+
+        <!-- Atlatec / Bosch -->
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">Software Engineer & Deep Learning Lead</h3>
+              <p class="mt-1 text-zinc-300">Atlatec GmbH (acquired by Bosch in 2022)</p>
+              <p class="mt-1 text-sm text-zinc-400">Supervised by Dr. Julius Ziegler</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Oct 2018 – Apr 2019</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Developed multimodal CNNs & weakly supervised learning methods for automatic generation of high-precision planning maps</span></li>
+          </ul>
+        </div>
+
+        <!-- Daimler -->
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">Master Thesis – Image Understanding Group</h3>
+              <p class="mt-1 text-zinc-300">Daimler AG</p>
+              <p class="mt-1 text-sm text-zinc-400">Supervised by Dr. Uwe Franke & Fiete Botschen</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Nov 2017 – Aug 2018</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Supervised Domain Adaptation for Semantic Segmentation</span></li>
+            <li class="flex gap-2"><span class="text-zinc-500">•</span><span>Use of synthetic data to improve pixel-wise semantic classification in real-world applications</span></li>
+          </ul>
+        </div>
+
+        <!-- Awards & Honors -->
+        <div class="rounded-3xl border border-yellow-500/20 bg-yellow-500/5 p-6">
+          <h3 class="text-xl font-semibold flex items-center gap-2">
+            <span>🏆</span> Awards & Honors
+          </h3>
+          <div class="mt-4 grid gap-3 md:grid-cols-2">
+            <div class="text-sm">
+              <div class="font-medium text-zinc-200">1st Best Paper Award</div>
+              <div class="text-zinc-400">FAS Workshop 2023</div>
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-zinc-200">2nd Best Paper Award</div>
+              <div class="text-zinc-400">IEEE ITSC 2022</div>
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-zinc-200">KSOP Scholarship</div>
+              <div class="text-zinc-400">PhD funding + MBA program (2019–present)</div>
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-zinc-200">KHYS Exchange Grant</div>
+              <div class="text-zinc-400">UC Berkeley exchange (2022)</div>
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-zinc-200">Daimler Student Partnership</div>
+              <div class="text-zinc-400">Mentoring & training (2016–2019)</div>
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-zinc-200">DAAD Promos Scholarship</div>
+              <div class="text-zinc-400">International studies (2015–2016)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="mt-16">
+      <h2 class="text-3xl font-bold tracking-tight">Education</h2>
+
+      <div class="mt-8 space-y-4">
+        <div class="rounded-3xl border border-blue-500/30 bg-gradient-to-r from-blue-500/10 to-purple-500/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">PhD in Autonomous Systems / Deep Learning</h3>
+              <p class="mt-1 text-zinc-300">Karlsruhe Institute of Technology (KIT)</p>
+              <p class="mt-2 text-sm text-zinc-400"><em>Thesis:</em> Learning from Maps: Scalable Ground Truth Generation in Autonomous Driving</p>
+              <p class="mt-1 text-sm text-zinc-400">Supervisor: Prof. Christoph Stiller · Defense: March 10, 2026</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">May 2019 – Mar 2026</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">MBA – Program tailored for PhD students</h3>
+              <p class="mt-1 text-zinc-300">Hector School of Engineering and Management</p>
+              <p class="mt-2 text-sm text-zinc-400">Coursework to equip doctoral researchers with expertise in project management, human resource management and finance</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">May 2019 – 2025</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">Visiting PhD Candidate</h3>
+              <p class="mt-1 text-zinc-300">UC Berkeley – Mechanical Systems Control Lab</p>
+              <p class="mt-2 text-sm text-zinc-400">Research on map-less driving and map perception · Supervised by Prof. Masayoshi Tomizuka</p>
+              <p class="mt-2 text-sm text-zinc-400">Funded by KHYS Exchange Grant</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Aug 2022 – Oct 2022</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-blue-500/30 bg-gradient-to-r from-blue-500/10 to-purple-500/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">M.Sc. Electrical Engineering / Computer Science</h3>
+              <p class="mt-1 text-zinc-300">Karlsruhe Institute of Technology (KIT)</p>
+              <p class="mt-2 text-sm text-zinc-400">GPA: 1.4/1.0 · Focus: Machine learning, system theory & robotics</p>
+              <p class="mt-2 text-sm text-zinc-400"><em>Thesis:</em> Supervised Domain Adaptation for Semantic Segmentation (Grade: 1.0/1.0)</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Oct 2014 – Aug 2018</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">Exchange Studies – M.Sc. Electrical Engineering</h3>
+              <p class="mt-1 text-zinc-300">University of Ottawa, Canada</p>
+              <p class="mt-2 text-sm text-zinc-400">Canadian GPA: 3.8/4.0 · Focus: Machine learning and data processing</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Aug 2015 – May 2016</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-blue-500/30 bg-gradient-to-r from-blue-500/10 to-purple-500/5 p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <h3 class="text-xl font-semibold">B.Sc. Electrical Engineering / Computer Science</h3>
+              <p class="mt-1 text-zinc-300">Karlsruhe Institute of Technology (KIT)</p>
+              <p class="mt-2 text-sm text-zinc-400"><em>Thesis:</em> Fusion of Data from Stereo Camera and Radar Sensor for Tracking of Extended Objects (Grade: 1.0/1.0)</p>
+            </div>
+            <span class="text-sm text-zinc-400 whitespace-nowrap">Oct 2011 – Oct 2014</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-16 pb-20">
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-8">
+        <h2 class="text-3xl font-bold tracking-tight">Get in Touch</h2>
+        <p class="mt-4 text-zinc-300 max-w-2xl">
+          I'm always happy to discuss research collaborations, student projects, and opportunities in
+          autonomous driving and machine learning. Feel free to reach out via email or connect on social media.
+        </p>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-zinc-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div>
+              <div class="font-medium text-zinc-200">Email</div>
+              <a href="mailto:frank.bieder@kit.edu" class="text-zinc-400 hover:text-white transition-colors">frank.bieder@kit.edu</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-zinc-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            <div>
+              <div class="font-medium text-zinc-200">Links</div>
+              <div class="flex flex-wrap gap-2 mt-1">
+                <a href="https://github.com/FranklynJey" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors text-sm">GitHub</a>
+                <span class="text-zinc-600">·</span>
+                <a href="https://www.linkedin.com/in/frank-bieder" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors text-sm">LinkedIn</a>
+                <span class="text-zinc-600">·</span>
+                <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors text-sm">Scholar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10">
+          <p class="text-sm text-zinc-400">
+            <strong>Open to:</strong> Research collaborations · PhD student supervision · Master's thesis supervision ·
+            Industrial partnerships · Speaking engagements
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-12 text-center text-sm text-zinc-500">
+        <p>© <span id="year"></span> Frank Joachim Bieder. All rights reserved.</p>
+        <p class="mt-2">
+          Built with <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-400 transition-colors">Tailwind CSS</a> (MIT License) ·
+          Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-400 transition-colors">GitHub Pages</a>
+        </p>
+        <p class="mt-2 text-xs">
+          This website is 100% open-source and compliant with all licensing requirements.
+        </p>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // Update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
