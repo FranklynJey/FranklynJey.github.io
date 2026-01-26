@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIDA Akademie - Akademie für Künstliche Intelligenz und Datenanalyse</title>
+    <meta name="description" content="Professionelle Fortbildungen in Python, Data Science, Machine Learning und AI-gestützter Softwareentwicklung. Von FZI- und KIT-Experten.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .course-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold gradient-text">KIDA Akademie</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#kurse" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition">Kurse</a>
+                        <a href="#ueber-uns" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition">Über uns</a>
+                        <a href="#vorteile" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition">Vorteile</a>
+                        <a href="#kontakt" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition">Kontakt</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-purple-600">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#kurse" class="block text-gray-700 hover:bg-purple-50 px-3 py-2 rounded-md text-base font-medium">Kurse</a>
+                <a href="#ueber-uns" class="block text-gray-700 hover:bg-purple-50 px-3 py-2 rounded-md text-base font-medium">Über uns</a>
+                <a href="#vorteile" class="block text-gray-700 hover:bg-purple-50 px-3 py-2 rounded-md text-base font-medium">Vorteile</a>
+                <a href="#kontakt" class="block text-gray-700 hover:bg-purple-50 px-3 py-2 rounded-md text-base font-medium">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-purple-100">
+                Akademie für Künstliche Intelligenz und Datenanalyse
+            </h2>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Professionelle Fort- und<br>Weiterbildung in KI & Data Science
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-purple-100 max-w-3xl mx-auto">
+                Von KI-Forschern lernen. Praxisorientierte Kurse in Python, Machine Learning und moderner Softwareentwicklung für Ihr Team.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#kurse" class="bg-white text-purple-700 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl transition transform hover:scale-105">
+                    Kurse entdecken
+                </a>
+                <a href="#kontakt" class="glass px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:bg-opacity-20 transition">
+                    Beratung anfragen
+                </a>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-3xl font-bold mb-2">2 Tage</div>
+                    <div class="text-purple-100">Intensive Workshops</div>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-3xl font-bold mb-2">3 Kurse</div>
+                    <div class="text-purple-100">Spezialisierte Programme</div>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <div class="text-3xl font-bold mb-2">Praxis</div>
+                    <div class="text-purple-100">Hands-On Learning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="kurse" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Unsere Kurse</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Drei spezialisierte Fortbildungsprogramme für Ihre berufliche Weiterentwicklung
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                
+                <!-- Course 1: Python Data Science Bootcamp -->
+                <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-gradient-to-br from-blue-500 to-blue-700 p-8 text-white flex flex-col justify-center">
+                            <div class="text-sm font-semibold mb-2 opacity-90">TAG 1</div>
+                            <h3 class="text-3xl font-bold mb-4">Python Data Science Bootcamp</h3>
+                            <p class="text-blue-100 mb-6">Von Pandas bis Machine Learning</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>1 Tag (8 Stunden)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                    </svg>
+                                    <span>Einsteiger & Fortgeschrittene</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Kursinhalte</h4>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                        Python Grundlagen
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Python Syntax & Best Practices</li>
+                                        <li>• Datenstrukturen & Funktionen</li>
+                                        <li>• NumPy für numerische Berechnungen</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                        Datenanalyse mit Pandas
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• DataFrames & Datenmanipulation</li>
+                                        <li>• Datenbereinigung & -transformation</li>
+                                        <li>• Explorative Datenanalyse (EDA)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                        Visualisierung
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Matplotlib & Seaborn</li>
+                                        <li>• Interaktive Plots mit Plotly</li>
+                                        <li>• Storytelling mit Daten</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                        Machine Learning Basics
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Scikit-learn Einführung</li>
+                                        <li>• Supervised Learning (Regression, Klassifikation)</li>
+                                        <li>• Model Training & Evaluation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">Lernziele</h5>
+                                <p class="text-gray-700 text-sm">
+                                    Nach diesem Kurs können Sie eigenständig Datenanalysen durchführen, aussagekräftige Visualisierungen erstellen und einfache Machine Learning Modelle trainieren. Ideal für Ingenieure, Analysten und alle, die datengetriebene Entscheidungen treffen wollen.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2: Python Engineering Praxis -->
+                <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-gradient-to-br from-green-500 to-green-700 p-8 text-white flex flex-col justify-center">
+                            <div class="text-sm font-semibold mb-2 opacity-90">TAG 2</div>
+                            <h3 class="text-3xl font-bold mb-4">Python Engineering Praxis</h3>
+                            <p class="text-green-100 mb-6">Testing, CI/CD & Deployment</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>1 Tag (8 Stunden)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                    </svg>
+                                    <span>Entwickler mit Python-Grundlagen</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Kursinhalte</h4>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                        Clean Code & Best Practices
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• PEP 8 & Code-Konventionen</li>
+                                        <li>• Design Patterns in Python</li>
+                                        <li>• Code-Refactoring Strategien</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                        Testing & Quality Assurance
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Unit Testing mit pytest</li>
+                                        <li>• Test-Driven Development (TDD)</li>
+                                        <li>• Mocking & Test Coverage</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                        Version Control & Collaboration
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Git Workflows (Feature Branches, PRs)</li>
+                                        <li>• Code Reviews Best Practices</li>
+                                        <li>• Dokumentation mit Sphinx</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                        CI/CD & Deployment
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• GitHub Actions / GitLab CI</li>
+                                        <li>• Docker für Python Apps</li>
+                                        <li>• Package Management & Distribution</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">Lernziele</h5>
+                                <p class="text-gray-700 text-sm">
+                                    Verwandeln Sie Ihre Python-Skripte in professionelle, wartbare Software. Sie lernen industrielle Best Practices für Testing, Deployment und Zusammenarbeit im Team kennen. Perfekt für den Übergang von Prototypen zur Produktionsreife.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3: AI-Driven Development -->
+                <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-gradient-to-br from-purple-500 to-purple-700 p-8 text-white flex flex-col justify-center">
+                            <div class="text-sm font-semibold mb-2 opacity-90">1-2 TAGE</div>
+                            <h3 class="text-3xl font-bold mb-4">AI-Driven Development</h3>
+                            <p class="text-purple-100 mb-6">ChatGPT, Copilot & Agentic Workflows</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>1-2 Tage (8-16 Stunden)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                    </svg>
+                                    <span>Entwickler & Tech-Professionals</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Kursinhalte</h4>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                        Prompt Engineering
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Effektive Prompts für Code-Generierung</li>
+                                        <li>• Context Management & Token Optimization</li>
+                                        <li>• Chain-of-Thought Prompting</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                        AI-Coding Tools
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• GitHub Copilot Best Practices</li>
+                                        <li>• ChatGPT für Code Review & Debugging</li>
+                                        <li>• Cursor, Codeium & weitere Tools</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                        Agentic AI Workflows
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Multi-Agent Systeme</li>
+                                        <li>• Automatisierte Code-Refactoring</li>
+                                        <li>• AI-gestützte Dokumentation</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                        Integration & Produktivität
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• AI in IDE & Terminal integrieren</li>
+                                        <li>• Team-Workflows mit AI optimieren</li>
+                                        <li>• Best Practices & Limitationen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">Lernziele</h5>
+                                <p class="text-gray-700 text-sm">
+                                    Maximieren Sie Ihre Produktivität mit modernen KI-Assistenten. Lernen Sie, wie Sie ChatGPT, Copilot und andere Tools effektiv in Ihren täglichen Entwicklungsprozess integrieren. Von Prompt Engineering bis hin zu automatisierten Workflows – werden Sie zum AI-Power-User.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4: Data Science Deep Dive -->
+                <div class="course-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-gradient-to-br from-orange-500 to-red-600 p-8 text-white flex flex-col justify-center">
+                            <div class="text-sm font-semibold mb-2 opacity-90">2 TAGE</div>
+                            <h3 class="text-3xl font-bold mb-4">Data Science Deep Dive</h3>
+                            <p class="text-orange-100 mb-6">Von der Datenanalyse bis zum Deployment</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>2 Tage (16 Stunden)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                    </svg>
+                                    <span>Fortgeschrittene mit ML-Grundlagen</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Kursinhalte</h4>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                                        Advanced ML Techniken
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Feature Engineering & Selection</li>
+                                        <li>• Ensemble Methods (Random Forest, XGBoost)</li>
+                                        <li>• Hyperparameter Tuning & AutoML</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                                        Deep Learning Basics
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Neural Networks mit PyTorch/TensorFlow</li>
+                                        <li>• CNNs für Computer Vision</li>
+                                        <li>• Transfer Learning & Fine-Tuning</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                                        MLOps & Productionization
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• Model Versioning & Experiment Tracking</li>
+                                        <li>• Model Deployment (FastAPI, Docker)</li>
+                                        <li>• Monitoring & A/B Testing</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                                        Real-World Case Studies
+                                    </h5>
+                                    <ul class="text-gray-600 space-y-1 ml-4 text-sm">
+                                        <li>• End-to-End Projekt: Von Daten zu Deployment</li>
+                                        <li>• Autonomes Fahren: Computer Vision Pipeline</li>
+                                        <li>• Prädiktive Wartung in der Industrie</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900 mb-2">Lernziele</h5>
+                                <p class="text-gray-700 text-sm">
+                                    Meistern Sie den kompletten Data Science Lifecycle – von der Problemdefinition über Feature Engineering und Model Training bis hin zum produktiven Deployment. Anhand echter Projekte aus autonomem Fahren und industrieller Anwendung lernen Sie, wie professionelle ML-Systeme gebaut werden.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="vorteile" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Warum KIDA Akademie?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Von Forschern, die wissen, wie es in der Praxis funktioniert
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Forschungsexzellenz</h3>
+                    <p class="text-gray-600">
+                        Dozenten mit PhD-Abschluss von FZI und KIT. Profitieren Sie von aktuellster Forschung und jahrelanger Projekterfahrung in autonomen Systemen und KI.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Praxisorientiert</h3>
+                    <p class="text-gray-600">
+                        Hands-on Workshops mit echten Projekten. Keine reine Theorie – Sie arbeiten an konkreten Aufgabenstellungen und können das Gelernte sofort anwenden.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Kleine Gruppen</h3>
+                    <p class="text-gray-600">
+                        Maximal 12 Teilnehmer pro Kurs. So können wir individuell auf Fragen eingehen und intensive Betreuung während der praktischen Übungen garantieren.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Aktuelle Technologien</h3>
+                    <p class="text-gray-600">
+                        Neueste Tools und Frameworks. Von PyTorch über Docker bis zu GitHub Copilot – Sie lernen mit dem State-of-the-Art Tech-Stack.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Eigene Projekte mitbringen</h3>
+                    <p class="text-gray-600">
+                        Bringen Sie Ihre echten Herausforderungen mit! Wir helfen Ihnen, konkrete Probleme aus Ihrem Arbeitsalltag zu lösen. Inklusive Teilnahmezertifikat und relevanten Code-Beispielen.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Firmen-Workshops</h3>
+                    <p class="text-gray-600">
+                        Maßgeschneiderte Inhouse-Schulungen. Wir passen Inhalte und Zeitplan an Ihre spezifischen Anforderungen und Ihr Unternehmenskontext an.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="ueber-uns" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Über uns</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Zwei KI-Forscher mit einer Mission: Exzellente Weiterbildung für die Zukunft der Arbeit
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                
+                <!-- Frank Bieder -->
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl">
+                    <div class="flex items-start mb-6">
+                        <img src="assets/frank.jpg" alt="Dr. Frank Joachim Bieder" class="w-20 h-20 rounded-full object-cover mr-4 ring-4 ring-purple-200">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Dr. Frank Joachim Bieder</h3>
+                            <p class="text-purple-600 font-semibold">Co-Founder & Dozent</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-gray-700">
+                        <p>
+                            <strong>Dr.-Ing. in Embodied AI</strong> vom Karlsruher Institut für Technologie (KIT), betreut am FZI Forschungszentrum Informatik und Institut für Mess- und Regelungstechnik.
+                        </p>
+                        <div>
+                            <p class="font-semibold text-gray-900 mb-2">Expertise:</p>
+                            <ul class="space-y-1 ml-4">
+                                <li>• Embodied AI & Computer Vision</li>
+                                <li>• Machine Learning & Deep Learning</li>
+                                <li>• Scalable Data Generation</li>
+                                <li>• End-to-End Autonomy</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 mb-2">Erfahrung:</p>
+                            <ul class="space-y-1 ml-4">
+                                <li>• Forschungsgruppenleiter für Visual Learning</li>
+                                <li>• 10+ Jahre Erfahrung in Deep Learning</li>
+                                <li>• Dozent für Probabilistische Messtechnik</li>
+                                <li>• Internationale Aufenthalte an der UC Berkeley, uOttawa und Praktika im Silicon Valley</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Piotr Spieker -->
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl">
+                    <div class="flex items-start mb-6">
+                        <img src="assets/pio.jpeg" alt="Dr. Piotr Spieker" class="w-20 h-20 rounded-full object-cover mr-4 ring-4 ring-green-200">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Dr. Piotr Spieker</h3>
+                            <p class="text-green-600 font-semibold">Co-Founder & Dozent</p>
+                            <p class="text-sm text-gray-600">(geb. Orzechowski)</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-gray-700">
+                        <p>
+                            <strong>Dr.-Ing. in Embodied AI</strong> vom Karlsruher Institut für Technologie (KIT), betreut am FZI Forschungszentrum Informatik und Institut für Mess- und Regelungstechnik.
+                        </p>
+                        <div>
+                            <p class="font-semibold text-gray-900 mb-2">Expertise:</p>
+                            <ul class="space-y-1 ml-4">
+                                <li>• Embodied AI & Verhaltensgenerierung</li>
+                                <li>• Decision-Making & Arbitration Graphs</li>
+                                <li>• Safety Verification & Reachability Analysis</li>
+                                <li>• Cooperative Automated Driving</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 mb-2">Erfahrung:</p>
+                            <ul class="space-y-1 ml-4">
+                                <li>• Lead-Entwickler für Multi-Sensorsysteme</li>
+                                <li>• 13+ Jahre Softwareentwicklung in der Robotik</li>
+                                <li>• 5+ Jahre als Dozent für Künstliche Intelligenz und Robotik</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-2xl max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Unsere Vision</h3>
+                <p class="text-gray-700 text-lg leading-relaxed text-center">
+                    Wir haben beide unsere Promotion am FZI und KIT absolviert und jahrelang an der Spitze der KI-Forschung gearbeitet. 
+                    Jetzt möchten wir unser Wissen weitergeben und Fachkräften helfen, die Skills für die KI-getriebene Zukunft zu entwickeln. 
+                    Bei KIDA Akademie verbinden wir wissenschaftliche Exzellenz mit praktischer Anwendbarkeit – damit Sie nicht nur verstehen, 
+                    <em>wie</em> moderne KI funktioniert, sondern auch <em>wie</em> Sie sie erfolgreich einsetzen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Kontakt aufnehmen</h2>
+                <p class="text-xl text-gray-600">
+                    Interesse an unseren Kursen? Schreiben Sie uns für weitere Informationen oder ein individuelles Angebot.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Firmenanfragen</h3>
+                    <p class="text-gray-600 mb-4">
+                        Sie möchten Ihr Team schulen? Wir erstellen gerne ein maßgeschneidertes Angebot für Inhouse-Workshops.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 mr-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:info@kida-akademie.de" class="hover:text-purple-600">info@kida-akademie.de</a>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 mr-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Karlsruhe, Deutschland</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Individuelle Teilnahme</h3>
+                    <p class="text-gray-600 mb-4">
+                        Als Einzelperson interessiert? Wir informieren Sie gerne über kommende offene Kurstermine.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 mr-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:kurse@kida-akademie.de" class="hover:text-purple-600">kurse@kida-akademie.de</a>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 mr-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>Nächste Termine ab Q2 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">E-Mail *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="company" class="block text-sm font-semibold text-gray-900 mb-2">Firma (optional)</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="course" class="block text-sm font-semibold text-gray-900 mb-2">Interesse an Kurs</label>
+                            <select id="course" name="course" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition">
+                                <option value="">Bitte wählen...</option>
+                                <option value="python-data-science">Python Data Science Bootcamp</option>
+                                <option value="python-engineering">Python Engineering Praxis</option>
+                                <option value="ai-driven-dev">AI-Driven Development</option>
+                                <option value="data-science-deep-dive">Data Science Deep Dive</option>
+                                <option value="custom">Individuelles Firmentraining</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-gray-900 mb-2">Ihre Nachricht *</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition transform hover:scale-[1.02]">
+                            Anfrage senden
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 text-center">
+                        * Pflichtfelder. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold gradient-text mb-4">KIDA Akademie</h3>
+                    <p class="text-gray-400 mb-4">
+                        Akademie für Künstliche Intelligenz und Datenanalyse
+                    </p>
+                    <p class="text-gray-400">
+                        Professionelle Fort- und Weiterbildung von FZI- und KIT-Experten.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Kurse</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#kurse" class="hover:text-purple-400 transition">Python Data Science</a></li>
+                        <li><a href="#kurse" class="hover:text-purple-400 transition">Python Engineering</a></li>
+                        <li><a href="#kurse" class="hover:text-purple-400 transition">AI-Driven Development</a></li>
+                        <li><a href="#kurse" class="hover:text-purple-400 transition">Data Science Deep Dive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#ueber-uns" class="hover:text-purple-400 transition">Über uns</a></li>
+                        <li><a href="#vorteile" class="hover:text-purple-400 transition">Vorteile</a></li>
+                        <li><a href="#kontakt" class="hover:text-purple-400 transition">Kontakt</a></li>
+                        <li><a href="mailto:info@kida-akademie.de" class="hover:text-purple-400 transition">E-Mail</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2026 KIDA Akademie. Alle Rechte vorbehalten.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-purple-400 transition">Impressum</a>
+                    <a href="#" class="hover:text-purple-400 transition">Datenschutz</a>
+                    <a href="#" class="hover:text-purple-400 transition">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Contact form handling (placeholder - replace with actual backend)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Vielen Dank für Ihre Anfrage! Wir werden uns schnellstmöglich bei Ihnen melden.\n\nHinweis: Dies ist eine Demo. In der finalen Version wird das Formular mit einem Backend verbunden.');
+            this.reset();
+        });
+
+        // Add scroll animation for course cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
